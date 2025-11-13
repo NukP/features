@@ -1,0 +1,2 @@
+*.venv/
+src/features/__pycache__/
