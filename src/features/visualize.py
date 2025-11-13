@@ -14,7 +14,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
 from xgboost import XGBRegressor
 
-from . import features
+from features import features_list
 
 
 def eval_feature_ablation(
@@ -53,11 +53,11 @@ def eval_feature_ablation(
     df_raw = df_raw.dropna().copy()
 
     if x_columns is None:
-        x_columns = list(features.X_ALL)
+        x_columns = list(features_list.X_ALL)
     if x_categorical is None:
-        x_categorical = list(features.X_METADATA_CATEGORICAL)
+        x_categorical = list(features_list.X_METADATA_CATEGORICAL)
     if target_columns is None:
-        target_columns = list(features.PRODUCTS)
+        target_columns = list(features_list.PRODUCTS)
 
     present_x = [c for c in x_columns if c in df_raw.columns]
     if not present_x:
