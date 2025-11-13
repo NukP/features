@@ -99,9 +99,11 @@ ignore = [
     "E731",
 ]
 
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]
 
-
-
+[tool.ruff.format]
+preview = true
 
 [tool.pyright]
 include = ["src", "tests"]
