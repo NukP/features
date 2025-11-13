@@ -18,8 +18,9 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
-    "pre-commit>=4.3.0",
-    "ruff>=0.14.4",
+    "ipykernel>=6.31.0",
+    "matplotlib>=3.9.4",
+    "pandas>=2.3.3",
 ]
 
 [project.urls]
@@ -102,4 +103,8 @@ ignore = [
 
 
 
-
+[tool.pyright]
+include = ["src", "tests"]
+extraPaths = ["src"]
+venvPath = "."
+venv = ".venv"
